@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="owneradvertisement1.css">
+</head>
+<body>
+
+
+<script type="text/javascript">
+function validate(){
+	
+	var flag=true;
+	var flatnm=document.fm.flatname.value;
+	var adrs=document.fm.adress.value;
+	var unt=document.fm.unit.value;
+	var dsrb=document.fm.description.value;
+	var sz=document.fm.size.value;
+	var bd=document.fm.bed.value;
+	var bth=document.fm.bath.value;
+	var prc=document.fm.price.value;
+	var phn=document.fm.phone.value;
+	var eml=document.fm.emailid.value;
+	
+	var str="";
+	
+	if(flatnm.length==0)
+	{
+		flag=false;
+		str="Must type Flat Name.";
+	}
+	else if(adrs.length==0)
+	{
+		flag=false;
+		str="Must type Flat Address.";
+	}
+	else if(unt.length==0)
+	{
+		flag=false;
+		str="Must type Flat Unit";
+	}
+	else if(dsrb.length==0)
+	{
+		flag=false;
+		str="Must type Flat Describtion.";
+	}
+	else if(sz.length==0)
+	{
+		flag=false;
+		str="Must type Flat Size.";
+	}
+	else if(bd.length==0)
+	{
+		flag=false;
+		str="Must type Number of bed.";
+	}
+	else if(bth.length==0)
+	{
+		flag=false;
+		str="Must type Number of bath.";
+	}
+	else if(prc.length==0)
+	{
+		flag=false;
+		str="Must type Flat Rental price.";
+	}
+	else if(phn.length==0)
+	{
+		flag=false;
+		str="Must type  Phone Number.";
+	}
+	else if(phn.length!=11)
+	{
+		flag=false;
+		str="Invalid  Phone Number.";
+	}
+	else if(eml.length==0)
+	{
+		flag=false;
+		str="Must type  Email Id.";
+	}
+	else if(eml.indexOf("@")<1)
+	{
+		flag=false;
+		str="Invalid Email ID.";
+	}
+	
+	document.getElementById("msg").innerHTML=str;
+	document.getElementById("msg").style.color = "red";
+	
+	return flag;
+	
+}
+
+
+
+</script>
+
+<form id="fm" action="Owner advertisement.php" name="fm"  enctype="multipart/form-data" method="post"><pre>
+<pre>
+<h2>Flat Advertisement</h2> <a href="homebefore.html" id="icon"><img src="icon.png"></a>
+
+                                                                            <b>Flat Name:</b>                   <b>Address:</b></br>
+<input type="text" id="flat" name="flatname" value="">         <input type="text" id="add" name="adress" value="">
+
+
+                                                                            <b>Unit:</b>                        <b><b>Description :</b></br>
+<input type="text" id="unit" name="unit" value="">        <input  type="text" id="des" name="description" value="" > <br><br>
+	
+                                                                            <b>Size(Sq.Ft):</b>                 <b>Price:</b></br>
+<input type="text" id="size" name="size" value="">         <input type="float" id="price" name="price" value=""></br></br>
+
+                                                                             <b>Bed:</b>                         <b>Bath:</b>
+ 
+ <input type="radio" id="rad" name="bed" value="1" checked>1                        <input type="radio" name="bath" value="1" checked>1<br>
+ <input type="radio" id="rad" name="bed" value="2">2                        <input type="radio" id="rad2" name="bath" value="2">2<br>
+ <input type="radio" id="rad" name="bed" value="3">3                        <input type="radio" id="rad2" name="bath" value="3">3<br>
+ <input type="radio" id="rad" name="bed" value="4">4                        <input type="radio" id="rad2" name="bath" value="4">4<br>
+ <input type="radio" id="rad" name="bed" value="5">5                        <input type="radio" id="rad2" name="bath" value="5">5<br>
+ <input type="radio" id="rad" name="bed" value="6">6                        <input type="radio" id="rad2" name="bath" value="6">6<br></br>
+
+                                                                            <b>Phone Number:</b>                 <b>Email ID:</b></br>
+<input type="text" id="pn" name="phone" value="">         <input type="text" id="email" name="emailid" value=""></br></br>
+
+                                                                            
+                                                                            <b id="select">Select file to upload :</b> <input type="file" id="upload" name="fileToUpload"> 
+   
+<input type="submit" onclick="return  validate()" id="submit" name="click" value="submit"></pre>
+<span id="msg"></span>
+</pre>
+</form>
+
+<a href="logout.php" id="logout">Logout</a>
+
+
+</body>
+</html>

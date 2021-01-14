@@ -1,0 +1,105 @@
+body{
+	background-image:url(slide1.jpg);
+	background-repeat:no-repeat;
+	background-size:2200px 1100px;
+}
+h2{
+	text-align:center;
+	font-size: 50px;
+	color:black;
+	margin-block-start: 0.3em;
+    margin-block-end: 0.3em;
+    margin-inline-start: 0px;
+    margin-inline-start: 0px;
+    font-weight: bold;
+	width:1500px;
+    border:3px solid white;
+    padding:10px solid white;
+	background-color:white;
+}
+#flat{
+    
+	border-radius:5px;
+	background-color: ;
+	margin-left:550px;
+    
+}
+#des{
+    
+	border-radius:5px;
+	background-color: ;
+	margin-left:5px;
+    
+}
+#unit{
+    
+	border-radius:5px;
+	background-color: ;
+	margin-left:550px;
+    
+}
+#size{
+    
+	border-radius:5px;
+	background-color: ;
+	margin-left:550px;
+    
+}
+#rad{
+    
+	border-radius:5px;
+	background-color: ;
+	margin-left:550px;
+    
+}
+#pn{
+    
+	border-radius:5px;
+	background-color: ;
+	margin-left:550px;
+    
+}
+#upload{
+    
+	border-radius:5px;
+	margin-left:10px;
+	margin-bottom:40px;
+    
+}
+input[type="submit"] {
+    
+	height:50px;
+	width:100px;
+	border-radius:10px;
+	background-color:white ;
+	border: 2px solid  #008CBA;
+	margin-left:670px;
+    position:relative;
+	margin-bottom:40px;
+}
+
+#up{
+	text-align:center;
+	color:white;
+	font-size:15px;
+}
+b{
+	color:white;
+	
+}
+#select{
+	color: black;
+	font-style:bold;
+	font-size: 15px;
+}
+#icon{
+	position:relative;
+	bottom: 75px;
+	left: 1350px;
+}
+#logout{
+	position:relative;
+	bottom: 1015px;
+	left: 1200px;
+	font-family: arial;
+}

@@ -1,0 +1,48 @@
+body{
+	background-image:url(lowangle.jpg);
+	background-repeat:no-repeat;
+	background-size:2200px 1000px;
+}
+h1{
+	text-align:center;
+	font-size: 80px;
+	color:white;
+}
+#pass{
+	border-radius:5px;
+	background-color: ;
+	margin-left:650px;
+  position:relative;
+}
+input[type="text"] {
+    
+	border-radius:5px;
+	background-color: ;
+	margin-left:650px;
+  position:relative;
+}
+#sub{
+	height:50px;
+	width:100px;
+	border-radius:10px;
+	background-color:white ;
+	border: 2px solid  #008CBA;
+	margin-left:670px;
+  position:relative;
+}
+
+p{
+	text-align:center;
+	color:white;
+	font-size:30px;
+}
+#sign{
+	color:white;
+	position:relative;
+	margin-left:630px;
+}
+#home{
+	color:white;
+	position:rleative;
+	
+}

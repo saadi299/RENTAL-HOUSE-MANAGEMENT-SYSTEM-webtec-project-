@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="reg.css">
+</head>
+<body>
+
+
+<script type="text/javascript">
+xmlhttp = new XMLHttpRequest();
+function showHint() {
+	var str=document.getElementById('chk_email').value;
+	document.getElementById("spinner").style.visibility="visible";
+	xmlhttp.onreadystatechange = function() {		
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {	
+			m=document.getElementById("msg");
+			m.innerHTML=xmlhttp.responseText;
+			document.getElementById("spinner").style.visibility="hidden";
+		}
+	};
+	var url="fetch.php";
+	//data sent to fetch.php using post method
+	xmlhttp.open("POST", url, true);
+	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlhttp.send("emailid="+str);
+}
+
+
+function validate(){
+
+	var flag=true;
+	var fname=document.frm.firstname.value;
+	var lname=document.frm.lastname.value;
+	var db=document.frm.dob.value;
+	var gn=document.frm.gender.value;
+	var phn=document.frm.phone.value;
+	var email=document.frm.emailid.value;
+	var pass=document.frm.pass.value;
+	var cpass=document.frm.confirmpass.value;
+	
+	var str="";
+	if(fname.length==0){
+		flag=false;
+		str="must type first name";
+	}
+	
+	
+	else if(lname.length==0){
+		flag=false;
+		str="must type last name";
+	}
+	else if(db.length==0){
+		flag=false;
+		str="must type date of birth";
+	}
+	else if(gn.length==0){
+		flag=false;
+		str="must type gender";
+	}
+	else if(phn.length==0){
+		flag=false;
+		str="must type phone number";
+	}
+	else if(phn.length!=11){
+		flag=false;
+		str="Phone number must be leangth 11";
+	}
+	else if(email.length==0){
+		flag=false;
+		str="must type email";
+	}
+	
+		else if(email.indexOf("@")<1){
+		flag=false;
+		str="invalid email";
+	}
+	else if(pass.length==0){
+		flag=false;
+		str="must type password";
+	}
+	else if(pass.length!=8){
+		flag=false;
+		str="password must be leangth 8";
+	}
+	else if(cpass.length==0){
+		flag=false;
+		str="must type confirm password";
+	}
+	
+	else if(pass!=cpass){
+		flag=false;
+		str="passworods must match";
+	}
+	else if(email.indexOf("@")<1){
+		flag=false;
+		str="invalid email";
+	}
+	document.getElementById("msg").innerHTML=str;
+	document.getElementById("msg").style.color = "red";
+	return flag;
+}
+</script>
+
+
+
+
+<form  id="fm" action="reg.php" name="frm" method="post">
+
+<h2>Sign up now </h2><a href="homebefore.html"><img src="icon.png"></a>
+
+<p>First name:</p>
+<input type="text" name="firstname" value=""></br></br>
+<p>Last name:</p>
+<input type="text" name="lastname" value=""></br></br>
+<p>Date Of Birth:</p>
+<input type="date" name="dob" id="dob" value=""></br></br>
+<p>Gender:</p>
+<input type="radio" name="gender"  value="male" checked>Male<br>
+<input type="radio" name="gender"  value="female">Female<br>
+<input type="radio" name="gender"  value="other">Other<br>
+<p>Phone Number:</p>
+<input type="text" name="phone" id="pnum" value=""></br></br>
+<p>Email ID:</p>
+<input type="text" name="emailid" id="email" onkeyup="showHint()" id="chk_email" value=""> <img id="spinner" src="loading.gif" width="20px" height="20px" style="visibility:hidden"></br></br>
+<span id="email-status"></span><br>
+<p>Password:</p>
+<input type="password" name="pass" value="" id="pass"></br></br>
+<p>Confirm Password:</p>
+<input type="password" name="confirmpass" value="" id="cpass"></br></br>
+<input type="submit"  onclick="return validate()" name="login" value="submit"><span id="msg"></span>
+
+</form>
+
+</body>
+</html>

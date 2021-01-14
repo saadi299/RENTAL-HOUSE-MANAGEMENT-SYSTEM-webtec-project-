@@ -1,0 +1,8 @@
+<!---
+<ul>
+<a href="#"> <li><i class="fa fa-building"><p><?php echo $recentProperties[$i]["image"];?></p></i> </li></a>
+<a href="#"> <li><i class="fa fa-bed"><p>4</p></i> </li></a>
+<a href="#"> <li><i class="fa fa-bath"><p>4</p></i> </li></a>
+
+</ul>
+--->
